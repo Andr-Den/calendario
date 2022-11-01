@@ -1,6 +1,6 @@
 import React from 'react'
 import * as api from '../../utils/api';
-
+import './Calendar.css'
 import Note from '../Note/Note';
 
 function Calendar() {
@@ -9,16 +9,16 @@ function Calendar() {
   React.useEffect(() => {
     api.getNotes()
     .then((res) => {
-        setNotes(res.data)
+      setNotes(res.data)
     })
   }, [])
 
   return (
-    <>
-      {notes.map(({name, description, date}) => (
-        <Note name={name} description={description} date={date}/>
+    <div className="calendar">
+      {notes.map(({name, description, date}, index) => (
+        <Note name={name} description={description} date={date} key={index}/>
     ))}
-  </>
+  </div>
   )
 }
 
