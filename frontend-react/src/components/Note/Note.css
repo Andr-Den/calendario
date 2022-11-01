@@ -1,0 +1,15 @@
+.note {
+  width: 240px;
+  height: 240px;
+  background-image: url(../../images/paper.png);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.note__container {
+  max-width: 200px;
+  text-align: center;
+}
