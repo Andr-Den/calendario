@@ -27,3 +27,13 @@ module.exports.createNote = (req, res, next) => {
       }
     });
 };
+
+module.exports.deleteNote = (req, res, next) => {
+  Note.findById(req.params._id)
+    .orFail(new Error('Запрашиваемая карточка не найдена'))
+    .then((note) => note.remove())
+    .then(() => res.send({ message: 'Запись успешно удалена' }))
+    .catch((error) => {
+      next(error);
+    });
+};
