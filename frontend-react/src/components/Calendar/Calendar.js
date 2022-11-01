@@ -11,7 +11,7 @@ function Calendar() {
     .then((res) => {
       setNotes(res.data)
     })
-  }, [])
+  }, [notes])
 
   return (
     <div className="calendar">
